@@ -11,14 +11,13 @@
     wakeup-source;
     diode-direction = "col2row";
 
-    // КОЛОНКИ (Col)
+// КОЛОНКИ (Col)
     col-gpios
-        = <&gpio0 29 GPIO_ACTIVE_HIGH> // Col 1: P0.29 (D15)
-        , <&gpio0 31 GPIO_ACTIVE_HIGH> // Col 2: P0.31 (D16)
-        , <&gpio1 11 GPIO_ACTIVE_HIGH> // Col 3: P1.11 (D10)
-        , <&gpio0 24 GPIO_ACTIVE_HIGH> // Col 4: P0.24 (D6)
-        , <&gpio0 9  GPIO_ACTIVE_HIGH> // Col 5: P0.09 (D7/NFC)
-        , <&gpio0 10 GPIO_ACTIVE_HIGH> // Col 6: P0.10 (D8/NFC)
+        = <&gpio0 9  GPIO_ACTIVE_HIGH> // Была Col 5, теперь Col 1 (Q, A, Z)
+        , <&gpio0 24 GPIO_ACTIVE_HIGH> // Была Col 4, теперь Col 2 (W, S, X)
+        , <&gpio1 11 GPIO_ACTIVE_HIGH> // Col 3 (E, D, C) - осталась в центре
+        , <&gpio0 31 GPIO_ACTIVE_HIGH> // Была Col 2, теперь Col 4 (R, F, V)
+        , <&gpio0 29 GPIO_ACTIVE_HIGH> // Была Col 1, теперь Col 5 (T, G, B)
         ;
 
     // СТРОКИ (Row)
@@ -27,6 +26,5 @@
         , <&gpio0 2  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 2: P0.02 (D14)
         , <&gpio0 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 3: P0.13 (D5)
         , <&gpio0 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 4: P0.20 (D4)
-        , <&gpio1 6  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> // Row 5: P1.06 (D9)
         ;
 };
